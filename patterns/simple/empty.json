@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "name": "Empty",
+    "description": "Blank canvas for manual drawing",
+    "category": "simple",
+    "discovered_by": "User",
+    "period": null,
+    "speed": null,
+    "size": {"width": 0, "height": 0}
+  },
+  "pattern": {
+    "coordinates": [],
+    "rle": ""
+  }
+}

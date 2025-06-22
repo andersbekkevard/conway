@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "name": "Glider",
+    "description": "Traveling pattern that moves diagonally",
+    "category": "simple",
+    "discovered_by": "John Conway",
+    "period": 4,
+    "speed": "c/4",
+    "size": {"width": 3, "height": 3}
+  },
+  "pattern": {
+    "coordinates": [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2]],
+    "rle": "bob$2bo$3o!"
+  }
+}

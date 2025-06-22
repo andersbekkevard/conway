@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "name": "Blinker",
+    "description": "Simple period-2 oscillator",
+    "category": "simple",
+    "discovered_by": "John Conway",
+    "period": 2,
+    "speed": null,
+    "size": {"width": 3, "height": 1}
+  },
+  "pattern": {
+    "coordinates": [[0, 1], [1, 1], [2, 1]],
+    "rle": "3o!"
+  }
+}

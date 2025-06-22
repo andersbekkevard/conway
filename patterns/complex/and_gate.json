@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "AND Gate",
+    "description": "Logic gate using glider collisions - demonstrates computation",
+    "category": "complex",
+    "discovered_by": "Conway Community",
+    "period": 30,
+    "speed": null,
+    "size": {"width": 40, "height": 30},
+    "computational": true
+  },
+  "pattern": {
+    "coordinates": [
+      [15, 10], [16, 10], [17, 10],
+      [15, 11], [17, 11],
+      [15, 12], [16, 12], [17, 12],
+      [20, 8], [21, 8], [20, 9], [21, 9],
+      [25, 15], [26, 15], [25, 16], [26, 16]
+    ],
+    "rle": "15b3o2b2o3b2o$15bobo2bo3bo$15b3o2b2o3b2o$20b2o$20b2o5b2o$26b2o!"
+  }
+}

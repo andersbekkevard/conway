@@ -2,7 +2,7 @@ import numpy as np
 import pygame
 from .grid import Grid
 from .config import Config
-from .patterns import PATTERNS
+from .pattern_manager import PatternManager
 
 
 class GameController:
@@ -15,6 +15,7 @@ class GameController:
     def __init__(self, selected_pattern=None):
         """Initializes the GameController, creating a new Grid instance."""
         self.grid = Grid(Config.GRID_WIDTH, Config.GRID_HEIGHT)
+        self.pattern_manager = PatternManager()
         if selected_pattern:
             self.load_pattern(selected_pattern)
 
@@ -55,9 +56,9 @@ class GameController:
 
     def load_starting_pattern(self):
         """Loads the configured starting pattern onto the grid (legacy method)."""
-        pattern_name = getattr(Config, 'STARTING_PATTERN', 'Empty')
-        if pattern_name in PATTERNS:
-            pattern = PATTERNS[pattern_name]
+        pattern_name = getattr(Config, 'STARTING_PATTERN', 'empty')
+        pattern = self.pattern_manager.get_pattern(pattern_name)
+        if pattern:
             self.grid.load_pattern(pattern, center=True)
 
     def load_pattern(self, pattern_name):
@@ -67,9 +68,9 @@ class GameController:
         Args:
             pattern_name (str): Name of the pattern to load
         """
-        if pattern_name in PATTERNS:
+        pattern = self.pattern_manager.get_pattern(pattern_name)
+        if pattern:
             self.grid.reset()
-            pattern = PATTERNS[pattern_name]
             self.grid.load_pattern(pattern, center=True)
 
     def draw_grid(self, screen, zoom, offset):

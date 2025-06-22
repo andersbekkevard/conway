@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "name": "R-Pentomino",
+    "description": "Evolves for 1103 generations into complex structure",
+    "category": "complex",
+    "discovered_by": "John Conway",
+    "period": null,
+    "speed": null,
+    "size": {"width": 3, "height": 3},
+    "stabilization_time": 1103,
+    "final_population": 116
+  },
+  "pattern": {
+    "coordinates": [
+      [1, 0], [2, 0], [0, 1], [1, 1], [1, 2]
+    ],
+    "rle": "b2o$2o$bo!"
+  }
+}

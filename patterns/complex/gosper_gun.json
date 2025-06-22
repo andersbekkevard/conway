@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "name": "Gosper Gun",
+    "description": "First discovered infinite growth pattern - produces gliders",
+    "category": "complex",
+    "discovered_by": "Bill Gosper",
+    "period": 30,
+    "speed": null,
+    "size": {"width": 36, "height": 9},
+    "growth": "infinite"
+  },
+  "pattern": {
+    "coordinates": [
+      [0, 4], [0, 5], [1, 4], [1, 5],
+      [10, 4], [10, 5], [10, 6], [11, 3], [11, 7], [12, 2], [12, 8], [13, 2], [13, 8],
+      [14, 5], [15, 3], [15, 7], [16, 4], [16, 5], [16, 6], [17, 5],
+      [20, 2], [20, 3], [20, 4], [21, 2], [21, 3], [21, 4], [22, 1], [22, 5],
+      [24, 0], [24, 1], [24, 5], [24, 6],
+      [34, 2], [34, 3], [35, 2], [35, 3]
+    ],
+    "rle": "24bo$22bobo$12b2o6b2o12b2o$11bo3bo4b2o12b2o$2o8bo5bo3b2o$2o8bo3bob2o4bobo$10bo5bo7bo$11bo3bo$12b2o!"
+  }
+}

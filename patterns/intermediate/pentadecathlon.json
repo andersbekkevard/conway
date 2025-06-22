@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "name": "Pentadecathlon",
+    "description": "Period-15 oscillator",
+    "category": "intermediate",
+    "discovered_by": "John Conway",
+    "period": 15,
+    "speed": null,
+    "size": {"width": 8, "height": 18}
+  },
+  "pattern": {
+    "coordinates": [
+      [5, 4], [5, 5], [4, 6], [6, 6], [5, 7], [5, 8], [5, 9], [5, 10], [4, 11], [6, 11], [5, 12], [5, 13]
+    ],
+    "rle": "4b2o$4b2o$3bobob$4b2o$4b2o$4b2o$4b2o$3bobob$4b2o$4b2o!"
+  }
+}

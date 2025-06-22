@@ -1,0 +1,24 @@
+{
+  "categories": {
+    "simple": {
+      "display_name": "Simple",
+      "description": "Basic patterns for beginners",
+      "order": 1,
+      "patterns": ["empty", "glider", "blinker", "pulsar"]
+    },
+    "intermediate": {
+      "display_name": "Intermediate",
+      "description": "More complex oscillators and traveling patterns",
+      "order": 2,
+      "patterns": ["pentadecathlon", "puffer_train", "diehard", "loafer_spaceship"]
+    },
+    "complex": {
+      "display_name": "Complex",
+      "description": "Advanced computational and evolutionary patterns",
+      "order": 3,
+      "patterns": ["gosper_gun", "acorn", "r_pentomino", "and_gate"]
+    }
+  },
+  "format_version": "1.0",
+  "total_patterns": 12
+}

@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "name": "Diehard",
+    "description": "Vanishes after exactly 130 generations",
+    "category": "intermediate",
+    "discovered_by": "Bill Gosper",
+    "period": null,
+    "speed": null,
+    "size": {"width": 8, "height": 3},
+    "lifespan": 130
+  },
+  "pattern": {
+    "coordinates": [
+      [0, 1], [1, 1], [1, 2], [5, 2], [6, 0], [6, 2], [7, 2]
+    ],
+    "rle": "6bob$2o8b$bob2ob2ob!"
+  }
+}

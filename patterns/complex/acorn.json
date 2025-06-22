@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "name": "Acorn",
+    "description": "Takes 5206 generations to stabilize into 633 cells",
+    "category": "complex",
+    "discovered_by": "Charles Corderman",
+    "period": null,
+    "speed": null,
+    "size": {"width": 8, "height": 3},
+    "stabilization_time": 5206,
+    "final_population": 633
+  },
+  "pattern": {
+    "coordinates": [
+      [0, 1], [2, 0], [2, 1], [4, 1], [5, 1], [6, 1], [7, 1]
+    ],
+    "rle": "bob$2bo$2o!"
+  }
+}

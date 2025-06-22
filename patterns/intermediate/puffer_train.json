@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "name": "Puffer Train",
+    "description": "Moving pattern that leaves debris trail behind",
+    "category": "intermediate",
+    "discovered_by": "Bill Gosper",
+    "period": 4,
+    "speed": "c/4",
+    "size": {"width": 13, "height": 7}
+  },
+  "pattern": {
+    "coordinates": [
+      [0, 0], [2, 0], [4, 0],
+      [0, 1], [4, 1],
+      [4, 2],
+      [3, 3], [4, 3],
+      [8, 0], [10, 0], [12, 0],
+      [8, 1], [12, 1],
+      [12, 2],
+      [11, 3], [12, 3],
+      [6, 4], [7, 4],
+      [5, 5], [6, 5], [7, 5], [8, 5],
+      [6, 6], [7, 6]
+    ],
+    "rle": "ob1ob1o3bob1ob1o$o3bo7bo3bo$4bo7bo$3b2o5b2o$13b$2b4o3b4o$3b2o5b2o!"
+  }
+}
