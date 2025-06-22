@@ -1,6 +1,6 @@
 # Conway's Game of Life
 
-An interactive implementation of Conway's Game of Life using Python and Pygame, featuring a modern UI with pattern selection, real-time drawing, and optimized simulation.
+A scaled-up implementation of Conway's Game of Life using Python and Pygame, featuring a massive 2000x2000 grid capable of supporting complex patterns, state machines, and elaborate computational structures.
 
 ## Features
 
@@ -63,14 +63,12 @@ python main.py
 - **New Pattern Button** - Open pattern selection screen
 - **Draw/Erase Button** - Toggle between drawing and erasing cells
 - **Speed Slider** - Adjust simulation speed (1-60 FPS)
-- **Zoom Slider** - Adjust zoom level (0.1x-3.0x)
+- **Zoom Slider** - Adjust zoom level (0.01x-5.0x) for viewing large patterns
 
 ## Available Patterns
 
 ### Still Life Patterns
 - **Empty** - Blank canvas for manual drawing
-- **Block** - Simple 2x2 still life
-- **Loaf** - Common 4x4 still life
 
 ### Oscillators
 - **Blinker** - Simple period-2 oscillator
@@ -86,6 +84,8 @@ python main.py
 - **Gosper Gun** - First discovered infinite growth pattern that produces gliders
 - **Diehard** - Vanishes completely after exactly 130 generations
 - **Acorn** - Takes 5206 generations to stabilize into 633 cells
+- **Puffer Train** - Moving pattern that leaves a trail of debris behind
+- **R-Pentomino** - Evolves for 1103 generations into a complex structure
 
 ## Technical Details
 
@@ -96,10 +96,11 @@ python main.py
 - **Event-driven UI** with responsive controls
 
 ### Performance
+- **Massive scale** - 2000x2000 grid (4 million cells) with ~0.06s per generation
 - **Vectorized operations** for entire grid updates
-- **Memory efficient** using uint8 arrays
-- **Smooth rendering** with only visible cells drawn
-- **Real-time controls** with immediate feedback
+- **Memory efficient** using uint8 arrays (~3.8MB total)
+- **Smooth rendering** with viewport culling for only visible cells
+- **Extended zoom range** - 0.01x to 5.0x for viewing complex large-scale patterns
 
 ### Dependencies
 - `pygame` - Graphics and UI

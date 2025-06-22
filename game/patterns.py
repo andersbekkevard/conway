@@ -57,14 +57,29 @@ ACORN = [
     (0, 1), (2, 0), (2, 1), (4, 1), (5, 1), (6, 1), (7, 1)
 ]
 
-# Block - Simple 2x2 still life
-BLOCK = [
-    (0, 0), (1, 0), (0, 1), (1, 1)
+# Puffer Train - Moving pattern that leaves debris trail
+PUFFER_TRAIN = [
+    # Engine 1
+    (0, 0), (2, 0), (4, 0),
+    (0, 1), (4, 1),
+    (4, 2),
+    (3, 3), (4, 3),
+    # Engine 2
+    (8, 0), (10, 0), (12, 0),
+    (8, 1), (12, 1),
+    (12, 2),
+    (11, 3), (12, 3),
+    # Connection
+    (6, 4), (7, 4),
+    (5, 5), (6, 5), (7, 5), (8, 5),
+    (6, 6), (7, 6)
 ]
 
-# Loaf - Common still life pattern
-LOAF = [
-    (1, 0), (2, 0), (0, 1), (3, 1), (1, 2), (3, 2), (2, 3)
+# R-pentomino - Evolves for 1103 generations into complex structure
+R_PENTOMINO = [
+    (1, 0), (2, 0),
+    (0, 1), (1, 1),
+    (1, 2)
 ]
 
 EMPTY = []
@@ -81,8 +96,8 @@ PATTERNS = {
     "Pentadecathlon": PENTADECATHLON,
     "Diehard": DIEHARD,
     "Acorn": ACORN,
-    "Block": BLOCK,
-    "Loaf": LOAF,
+    "Puffer_Train": PUFFER_TRAIN,
+    "R_Pentomino": R_PENTOMINO,
 }
 
 # Pattern metadata for documentation
@@ -97,6 +112,6 @@ PATTERN_INFO = {
     "Pentadecathlon": "Period-15 oscillator",
     "Diehard": "Vanishes after exactly 130 generations",
     "Acorn": "Takes 5206 generations to stabilize into 633 cells",
-    "Block": "Simple 2x2 still life pattern",
-    "Loaf": "Common 4x4 still life pattern",
+    "Puffer_Train": "Moving pattern that leaves debris trail behind",
+    "R_Pentomino": "Evolves for 1103 generations into complex structure",
 } 

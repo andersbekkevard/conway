@@ -10,10 +10,10 @@ class Config:
     WIDTH = 800
     HEIGHT = 600
 
-    # Grid dimensions
-    GRID_WIDTH = 100
-    GRID_HEIGHT = 100
-    CELL_SIZE = 15  # Initial cell size
+    # Grid dimensions - Scaled up for complex patterns and state machines
+    GRID_WIDTH = 2000
+    GRID_HEIGHT = 2000
+    CELL_SIZE = 3  # Smaller initial cell size for better viewport utilization
 
     # Colors
     BLACK = (0, 0, 0)
@@ -27,8 +27,8 @@ class Config:
     BUTTON_HEIGHT = 40
     BUTTON_MARGIN = 10
     SLIDER_HEIGHT = 20
-    MIN_ZOOM = 0.1
-    MAX_ZOOM = 3.0
+    MIN_ZOOM = 0.01  # Extended zoom-out for viewing large patterns
+    MAX_ZOOM = 5.0   # Extended zoom-in for fine detail work
 
     # Simulation speed
     FPS = 10
