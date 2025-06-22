@@ -46,64 +46,61 @@ class PatternSelectionScreen:
                 return pygame.font.SysFont(None, size)
 
     def create_buttons(self):
-        """Create buttons for each available pattern organized by category."""
+        """Create buttons organized in 3 columns by complexity, 4 rows."""
         categories = self.pattern_manager.get_categories_ordered()
         
-        # Get all patterns from all categories in order
-        all_patterns = []
-        category_start_indices = {}
-        
+        # Organize patterns by category (column)
+        patterns_by_category = {}
         for category_key, category_name in categories:
-            category_start_indices[category_name] = len(all_patterns)
             patterns = self.pattern_manager.categories[category_key].get("patterns", [])
-            all_patterns.extend(patterns)
+            patterns_by_category[category_name] = patterns
         
-        # Calculate grid layout: 3 columns, 4 rows
+        # Calculate grid layout: 3 columns (complexities), 4 rows
         cols = 3
         rows = 4
-        total_patterns = cols * rows
         
         card_width = 200
         card_height = 90
-        margin_x = 25
+        margin_x = 30
         margin_y = 25
-        label_width = 80  # Space for category labels
+        header_height = 25  # Space for column headers
         
-        # Position grid below instruction text with proper spacing for labels
+        # Center the grid perfectly on screen
         grid_width = cols * card_width + (cols - 1) * margin_x
         grid_height = rows * card_height + (rows - 1) * margin_y
-        start_x = (Config.WIDTH - grid_width) // 2 + label_width // 2
-        start_y = 140
+        start_x = (Config.WIDTH - grid_width) // 2
+        start_y = 160  # Start below instruction text + header space
         
         self.buttons = []
-        self.category_labels = []  # Store category label positions
+        self.category_labels = []  # Store column header positions
         
-        # Create pattern cards in 3x4 grid
-        for i, pattern_name in enumerate(all_patterns[:total_patterns]):
-            row = i // cols
-            col = i % cols
-            
-            x = start_x + col * (card_width + margin_x)
-            y = start_y + row * (card_height + margin_y)
-            
-            description = self.pattern_manager.get_pattern_info(pattern_name)
-            card = PatternCard(
-                x, y, card_width, card_height,
-                pattern_name.replace('_', ' ').title(),  # Format display name
-                description,
-                lambda p=pattern_name: self.select_pattern(p),
-                self.font,  # Title font
-                self.description_font  # Description font
-            )
-            self.buttons.append(card)
+        # Create column headers (complexity labels)
+        for col, (category_key, category_name) in enumerate(categories):
+            header_x = start_x + col * (card_width + margin_x) + card_width // 2
+            header_y = start_y - header_height
+            self.category_labels.append((header_x, header_y, category_name))
         
-        # Add category labels based on where each category starts in the grid
-        for category_name, start_idx in category_start_indices.items():
-            if start_idx < len(all_patterns):
-                start_row = start_idx // cols
-                label_x = start_x - label_width
-                label_y = start_y + start_row * (card_height + margin_y) + card_height // 2
-                self.category_labels.append((label_x, label_y, category_name))
+        # Create pattern cards: fill columns by complexity, then rows
+        for col, (category_key, category_name) in enumerate(categories):
+            patterns = patterns_by_category.get(category_name, [])
+            
+            for row in range(rows):
+                if row < len(patterns):
+                    pattern_name = patterns[row]
+                    
+                    x = start_x + col * (card_width + margin_x)
+                    y = start_y + row * (card_height + margin_y)
+                    
+                    description = self.pattern_manager.get_pattern_info(pattern_name)
+                    card = PatternCard(
+                        x, y, card_width, card_height,
+                        pattern_name.replace('_', ' ').title(),  # Format display name
+                        description,
+                        lambda p=pattern_name: self.select_pattern(p),
+                        self.font,  # Title font
+                        self.description_font  # Description font
+                    )
+                    self.buttons.append(card)
 
     def select_pattern(self, pattern_name):
         """Select a pattern and exit the selection screen."""
